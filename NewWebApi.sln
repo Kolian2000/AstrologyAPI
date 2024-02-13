@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewWebApi", "NewWebApi.csproj", "{D515535A-B5DB-499F-B113-3D1F2ADF2A21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramBot", "..\TelegramBot\TelegramBot.csproj", "{F5A2043D-FA5B-4B2A-A44D-5B260B54AE6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewWebApi.Test", "..\NewWebApi.Test\NewWebApi.Test.csproj", "{8146C8AD-A4D3-411B-9364-2D4A77097A99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D515535A-B5DB-499F-B113-3D1F2ADF2A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D515535A-B5DB-499F-B113-3D1F2ADF2A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D515535A-B5DB-499F-B113-3D1F2ADF2A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D515535A-B5DB-499F-B113-3D1F2ADF2A21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A2043D-FA5B-4B2A-A44D-5B260B54AE6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A2043D-FA5B-4B2A-A44D-5B260B54AE6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A2043D-FA5B-4B2A-A44D-5B260B54AE6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A2043D-FA5B-4B2A-A44D-5B260B54AE6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8146C8AD-A4D3-411B-9364-2D4A77097A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8146C8AD-A4D3-411B-9364-2D4A77097A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8146C8AD-A4D3-411B-9364-2D4A77097A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8146C8AD-A4D3-411B-9364-2D4A77097A99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A13893EB-B1E6-4509-A12C-D35C0335F144}
+	EndGlobalSection
+EndGlobal
