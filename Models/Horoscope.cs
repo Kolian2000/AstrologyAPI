@@ -7,7 +7,7 @@ namespace NewWebApi.Models
 		public DateTime HoroscopeTime { get; set; }
 		public int UserId { get; set; }
 		public string HoroscopeName { get; set; }
-		
+		public string TimeZone { get; set; }
 		
 	}
 }

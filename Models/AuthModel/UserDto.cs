@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace NewWebApi.Models.AuthModel
 {
-	public class UserDto
+	public class UserDto : User
 	{
 		public int UserId { get; set; }
 		[Required]
