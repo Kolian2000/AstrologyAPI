@@ -10,6 +10,8 @@ namespace NewWebApi.Models
 		public bool IsArcane { get; set; }
 		public string PicturePath { get; set; }
 		public Desc? Desc { get; set; }
+		
+		
 
 
 

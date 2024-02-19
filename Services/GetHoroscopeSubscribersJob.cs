@@ -1,6 +1,7 @@
 using System.Data;
 using Microsoft.Extensions.Caching.Memory;
 using NewWebApi.Interface;
+using NewWebApi.Models;
 using Quartz;
 
 namespace NewWebApi.Services
@@ -8,34 +9,31 @@ namespace NewWebApi.Services
 	public class GetHoroscopeSubscribersJob : IJob
 	{
 		private readonly IMemoryCache memoryCache;
-		private readonly IRepository repository;
 		private readonly IOpenServices openServices;
+        private readonly IReposi reposi;
 
-		public GetHoroscopeSubscribersJob(IMemoryCache memoryCache, IRepository repository, IOpenServices openServices) 
+        public GetHoroscopeSubscribersJob(IMemoryCache memoryCache, IOpenServices openServices, IReposi reposi) 
 		{
 			this.memoryCache = memoryCache;
-			this.repository = repository;
 			this.openServices = openServices;
-		}
+            this.reposi = reposi;
+        }
 
 		public async Task Execute(IJobExecutionContext context)
 		{
-			var GetHoroscopeSubscribers = await repository.GetHoroscopeSubscribes();
-			var result = new Dictionary<DateTime,Dictionary<string, string>>();
+			var GetHoroscopeSubscribers =await Horoscope.GetHoroscopeSubscribes(reposi);
+			var result = new Dictionary<int,Dictionary<string, string>>();
 			foreach (DataRow item in GetHoroscopeSubscribers.DataTableResult.Rows)
 			{
-				var id = Convert.ToString(item["username"]);
-				string horoscopeName = item["horoscope_name"].ToString();
-				var horoscopeTime = Convert.ToDateTime(item["horoscope_time"]);
-				
-				var horoscopeResponse = await openServices.GetHoroscopeAnswer(horoscopeName);
-				if(result.ContainsKey(horoscopeTime))
+				var horoscope = new Horoscope(item);
+				var horoscopeResponse = await horoscope.GetHoroscopeAnswer(openServices);
+				if(result.ContainsKey(horoscope.HoroscopeTime.Hour))
 				{
-					result[horoscopeTime].Add(id, horoscopeResponse);
+					result[horoscope.HoroscopeTime.Hour].Add(horoscope.UserName, horoscopeResponse);
 				}
 				else
 				{
-					result.Add(horoscopeTime, new Dictionary<string, string> { { id, horoscopeResponse } });
+					result.Add(horoscope.HoroscopeTime.Hour, new Dictionary<string, string> { { horoscope.UserName, horoscopeResponse } });
 				}
 			}
 			memoryCache.Set("Horoscopes", result, TimeSpan.FromDays(1));

@@ -24,7 +24,8 @@ builder.Services.AddQuartz(q =>
 	.WithIdentity(jobKey.Name + "_trigger")
 	.StartNow()
 	.WithDailyTimeIntervalSchedule(x => x
-	.StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(15,05))
+	.StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(12,00))
+	.WithIntervalInHours(1)
 	.InTimeZone(TimeZoneInfo.Local)
 	));
 });
@@ -39,7 +40,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 // builder.Services.AddQuartzHostedService
 
-builder.Services.AddScoped<IRepository, Repository>();
+builder.Services.AddScoped<IReposi, DBConnection>();
 builder.Services.AddMemoryCache();
 builder.Services.AddHttpClient<IOpenServices, OpenAi>((HttpClient client) =>
 {

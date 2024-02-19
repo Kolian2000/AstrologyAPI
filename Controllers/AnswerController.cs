@@ -16,19 +16,19 @@ namespace NewWebApi.Controllers
 	public class AnswerController : ControllerBase
 	{
 		private readonly IOpenServices _openAi;
-		private readonly IRepository _repository;
+        private readonly IReposi _reposi;
 
-		public AnswerController(IOpenServices openai, IRepository repository)
+        public AnswerController(IOpenServices openai, IReposi reposi)
 		{
 			_openAi = openai;
-			_repository = repository;
-		}
+            _reposi = reposi;
+        }
 		public IEnumerable<Card> Cards { get; set; }
 		[AuthAttrtribute]
 		[HttpGet]
 		public async Task<IActionResult> Get(Desc desc)
 		{
-			var cards = await _repository.GetCards(desc.Name);
+			var cards = await desc.GetCards(_reposi);
 			if(cards.DataTableResult == null)
 			{
 				return NotFound("No cards found");

@@ -34,9 +34,6 @@ namespace NewWebApi.Services.Attributes
 				results = await repository.CheckResponseCount(new User{ Name = headersValue});
 
 			}
-			
-
-
 			if (!results.IsSuccess)
 			{
 				// Пользователь уже зарегистрирован, выполните необходимые действия

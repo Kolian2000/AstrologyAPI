@@ -19,7 +19,12 @@ namespace NewWebApi.Models.AuthModel
 		
 		public TimeSpan CreatedAt { get; set; }
 		
-		
+		public User(UserDto userDto)
+		{
+			Name = userDto.Name;
+			PasswordHash = BCrypt.Net.BCrypt.HashPassword(userDto.Password);
+		}
+		public User() { }
 		public async Task<Result> AddUser(IReposi reposi)
 		{
 			var result = new Result();
@@ -41,7 +46,7 @@ namespace NewWebApi.Models.AuthModel
 					return new Result
 					{
 						IsSuccess = false,
-						ErrorMessage = "Failed to add user to the database."
+						ErrorMessage = "User with the provided username already exists."
 						// Другие поля, которые вы хотите добавить к объекту Result
 					};
 				}
@@ -90,8 +95,6 @@ namespace NewWebApi.Models.AuthModel
 			{
 				comand.Parameters.AddWithValue("@username", Name);
 				return await reposi.Request(comand, Models.Enum.TypeOfComand.Count);
-				//resilt.IsSuccess = Convert.ToInt32(resilt.DataTableResult.Rows[0]) > 0;
-				//return resilt;
 			}
 		}
 		public Task<Result> DeductResponseCount(IReposi reposi)

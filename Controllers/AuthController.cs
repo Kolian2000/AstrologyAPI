@@ -10,33 +10,24 @@ namespace NewWebApi.Controllers
 	[Route("api/[controller]")]
 	public class AuthController : ControllerBase
 	{
-		public IRepository _repository { get; set; }
-		
+        private readonly IReposi _iReposi;
 
-		public AuthController(IRepository repository)
+        public AuthController(IReposi IReposi)
 		{
-			_repository = repository;
-		}
+            _iReposi = IReposi;
+        }
 		[HttpPost("Register")]
 		
 		public async Task<ActionResult> Register(UserDto user)
 		{	
-			var results =  await _repository.CheckUserExists(user);
+			var users = new User(user);
+			var results =  await users.CheckUserExists(_iReposi);
 			if(results.IsSuccess)
 			{
 				return BadRequest(results);
 			}
-			
-			var users = new User();
-			var passwordHash = BCrypt.Net.BCrypt.HashPassword(user.Password);
-			
-			users.PasswordHash = passwordHash;
-			users.Name = user.Name;
-			
-			var result = await _repository.AddUser(users);
+			var result = await users.AddUser(_iReposi);
 			return Ok(result);
-			
-			
 		}
 		
 		

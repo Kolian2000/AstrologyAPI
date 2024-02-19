@@ -2,18 +2,19 @@ using System.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using NewWebApi.Interface;
 using NewWebApi.Models;
 using NewWebApi.Models.Enum;
 using Npgsql;
 
 namespace NewWebApi.Services
 {
-	public abstract class DataBaseConnection
+	public class DBConnection : IReposi
 	{
 		private readonly IConfiguration configuration;
 		private readonly ILogger logger;
 
-		public DataBaseConnection(IConfiguration configuration, ILogger<DataBaseConnection> logger)
+		public DBConnection(IConfiguration configuration, ILogger<DBConnection> logger)
 		{
 			this.configuration = configuration;
 			this.logger = logger;

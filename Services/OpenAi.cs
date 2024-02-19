@@ -26,13 +26,7 @@ namespace NewWebApi.Services
         return await GetResponse(requestString);
     }
 
-    public async Task<string> GetHoroscopeAnswer(string horoscope)
-    {
-        var requestString = BuildRequestString("ты профессиональный астролог, знаешь принципы планет и домов, умеешь самокритически мыслить", $"Сделай гороскоп на сегодня для {horoscope}");
-        return await GetResponse(requestString);
-    }
-
-    private async Task<string> GetResponse(string requestString)
+    public async Task<string> GetResponse(string requestString)
     {
         var request = new HttpRequestMessage
         {
@@ -56,7 +50,7 @@ namespace NewWebApi.Services
         }
     }
 
-    private string BuildRequestString(params string[] messages)
+    public string BuildRequestString(params string[] messages)
     {
         var stringBuilder = new StringBuilder();
         stringBuilder.AppendLine("{");

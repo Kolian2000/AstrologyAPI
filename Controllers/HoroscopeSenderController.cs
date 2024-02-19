@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
+using NewWebApi.Interface;
 using NewWebApi.Models;
 
 namespace NewWebApi.Controllers
@@ -9,19 +10,21 @@ namespace NewWebApi.Controllers
 	public class HoroscopeSenderController : ControllerBase
 	{
 		private readonly IMemoryCache _memoryCache;
+		private readonly IReposi _repository;
 
-		public HoroscopeSenderController(IMemoryCache memoryCache)
+		public HoroscopeSenderController(IMemoryCache memoryCache, IReposi repository)
 		{
 			_memoryCache = memoryCache;
+			_repository = repository;
 		}
 		[HttpPost("HoroscopeSender")]
 		public async Task<IActionResult> HoroscopeSender(DateTime date)
 		{
-			if (_memoryCache.TryGetValue("Horoscopes", out Dictionary<DateTime, Dictionary<string, string>> horoscopes))
+			if (_memoryCache.TryGetValue("Horoscopes", out Dictionary<int, Dictionary<string, string>> horoscopes))
 			{
-				if (horoscopes.ContainsKey(date))
+				if (horoscopes.ContainsKey(date.Hour))
 				{
-					return Ok(horoscopes[date]);
+					return Ok(horoscopes[date.Hour]);
 				}
 				else
 				{
@@ -33,10 +36,13 @@ namespace NewWebApi.Controllers
 				return NotFound("Horoscopes not found");
 			}
 		}
-		// public Task<IActionResult> HoroscopeSubscribe(Horoscope horoscope)
-		// {
-			
-		// }
+		[HttpPost("HoroscopeSubscribe")]
+		public async Task<IActionResult> HoroscopeSubscribe(Horoscope horoscope)
+		{
+			horoscope.TimeConverter();
+			var horoscopeSub = await horoscope.SubscribeToHoroscope(_repository);
+			return Ok(horoscopeSub);
+		}
 		
 		
 		
