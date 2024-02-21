@@ -12,13 +12,13 @@ namespace NewWebApi.Models.AuthModel
 		public string Name { get; set; }
 		[Required]
 		public string PasswordHash { get; set; }
-		
+
 		public string? Email { get; set; }
-		
+
 		public string ResponseCount { get; set; }
-		
+
 		public TimeSpan CreatedAt { get; set; }
-		
+
 		public User(UserDto userDto)
 		{
 			Name = userDto.Name;
@@ -34,7 +34,7 @@ namespace NewWebApi.Models.AuthModel
 				WHERE NOT EXISTS (SELECT 1 FROM ""users"" WHERE username = @username);";
 
 			try
-			{	
+			{
 				using (var comand = new NpgsqlCommand(sqlQuery))
 				{
 					comand.Parameters.AddWithValue("@username", Name);
@@ -61,13 +61,13 @@ namespace NewWebApi.Models.AuthModel
 		public async Task<Result> CheckUserExists(IReposi reposi)
 		{
 			var result = new Result();
-			
+
 			try
 			{
 				using (var command = new NpgsqlCommand("SELECT 1 FROM \"users\" WHERE username = @username;"))
 				{
-					command.Parameters.AddWithValue("@username",Name);
-					result= await reposi.Request(command, TypeOfComand.Check);
+					command.Parameters.AddWithValue("@username", Name);
+					result = await reposi.Request(command, TypeOfComand.Check);
 				}
 				if (result.IsSuccess)
 				{
@@ -78,23 +78,23 @@ namespace NewWebApi.Models.AuthModel
 				{
 					IsSuccess = false,
 					ErrorMessage = "User with the provided username does not exist."
-				};		
+				};
 			}
 			catch (Exception ex)
 			{
 				System.Console.WriteLine(ex.Message);
 				throw;
-			}	
+			}
 		}
 
-		
+
 
 		public async Task<Result> CheckResponseCount(IReposi reposi)
 		{
 			using (var comand = new NpgsqlCommand("SELECT response_count FROM users WHERE username = @username;"))
 			{
 				comand.Parameters.AddWithValue("@username", Name);
-				return await reposi.Request(comand, Models.Enum.TypeOfComand.Count);
+				return await reposi.Request(comand, TypeOfComand.Count);
 			}
 		}
 		public Task<Result> DeductResponseCount(IReposi reposi)
@@ -102,8 +102,42 @@ namespace NewWebApi.Models.AuthModel
 			using (var comand = new NpgsqlCommand("UPDATE users SET response_count = response_count - 1 WHERE username = @username;"))
 			{
 				comand.Parameters.AddWithValue("@username", Name);
-				return reposi.Request(comand, Models.Enum.TypeOfComand.Insert);
+				return reposi.Request(comand, TypeOfComand.Insert);
 			}
+		}
+		public async Task<Result> CheckHoroscopeAllowed(IReposi reposi)
+		{
+			using (var comand = new NpgsqlCommand("SELECT can_get_horoscope FROM users WHERE username = @username;"))
+			{
+				comand.Parameters.AddWithValue("@username", Name);
+				var result = await reposi.Request(comand, TypeOfComand.Get);
+				if (result.DataTableResult.Rows.Count > 0)
+				{
+					result.IsSuccess = result.DataTableResult.Rows[0]["can_get_horoscope"] is bool;
+					result.ErrorMessage = "Access is allowed.";
+					return result;
+				}
+				result.IsSuccess = false;
+				result.ErrorMessage = "User with the provided username does not exist.";
+				return result;
+
+			}
+		}
+		public async Task<Result> UnsubscribeHoroscope(IReposi reposi)
+		{
+			using (var comand = new NpgsqlCommand("UPDATE users SET can_get_horoscope = false WHERE username = @username;"))
+			{
+				comand.Parameters.AddWithValue("@username", Name);
+				var result = await reposi.Request(comand, TypeOfComand.Insert);
+				if(result.IsSuccess)
+				{
+					result.ErrorMessage = "Horoscope unsubscribed.";
+					return result;
+				}
+				result.ErrorMessage = "User with the provided username does not exist.";
+				return result;
+			}
+			
 		}
 	}
 }

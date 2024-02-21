@@ -1,80 +1,85 @@
 ﻿<Properties StartupConfiguration="{D515535A-B5DB-499F-B113-3D1F2ADF2A21}|https">
-  <MonoDevelop.Ide.ItemProperties.NewWebApi.Test FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint enabled="false" file="/Users/apple/TelegramBot/BotController/TaroSession.cs" line="38" column="1" />
-      <Breakpoint file="/Users/apple/NewWebApi/Services/Attributes/AuthAtrtribute.cs" relfile="Services/Attributes/AuthAtrtribute.cs" line="27" column="1" />
+      <Breakpoint file="/Users/apple/NewWebApi/Services/Attributes/AuthAtrtribute.cs" relfile="Services/Attributes/AuthAtrtribute.cs" line="26" column="1" />
       <Breakpoint file="/Users/apple/NewWebApi/Services/Attributes/AuthAtrtribute.cs" relfile="Services/Attributes/AuthAtrtribute.cs" line="14" column="1" />
+      <Breakpoint file="/Users/apple/TelegramBot/Services/Sender.cs" line="96" column="1" />
+      <Breakpoint file="/Users/apple/TelegramBot/Services/Sender.cs" line="72" column="1" />
+      <Breakpoint file="/Users/apple/NewWebApi/Controllers/HoroscopeSenderController.cs" relfile="Controllers/HoroscopeSenderController.cs" line="25" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Services/Attributes/AuthAtrtribute.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HoroscopeSenderController.cs">
     <Files>
-      <File FileName="../TelegramBot/Program.cs" Line="1" Column="1" />
-      <File FileName="Program.cs" Line="52" Column="1" />
-      <File FileName="Controllers/AnswerController.cs" Line="44" Column="1" />
-      <File FileName="Services/OpenAi.cs" Line="22" Column="5" />
-      <File FileName="../TelegramBot/Services/Sender.cs" Line="24" Column="63" />
-      <File FileName="../TelegramBot/Services/Interface/ISender.cs" />
+      <File FileName="../TelegramBot/Program.cs" Line="52" Column="1" />
+      <File FileName="Program.cs" Line="26" Column="39" />
+      <File FileName="Controllers/AnswerController.cs" />
+      <File FileName="Services/OpenAi.cs" />
+      <File FileName="../TelegramBot/Services/Sender.cs" Line="93" Column="1" />
+      <File FileName="../TelegramBot/Services/Interface/ISender.cs" Line="1" Column="1" />
       <File FileName="../TelegramBot/BotController/BotSEnder.cs" />
       <File FileName="../TelegramBot/Services/ApiResponseDeserialize.cs" />
       <File FileName="../TelegramBot/Services/GetImage.cs" />
-      <File FileName="Services/Repository.cs" Line="145" Column="1" />
-      <File FileName="Services/DataBaseConnection.cs" Line="75" Column="1" />
-      <File FileName="../TelegramBot/BotController/TaroSession.cs" Line="47" Column="30" />
+      <File FileName="../TelegramBot/BotController/TaroSession.cs" Line="1" Column="1" />
       <File FileName="../TelegramBot/Model/TelegramCacheModel.cs" />
-      <File FileName="Models/ResponseType.cs" Line="11" Column="1" />
-      <File FileName="../TelegramBot/Model/JsonObjects/ApiResponseModel.cs" Line="34" Column="4" />
-      <File FileName="../TelegramBot/Model/JsonObjects/CardModel.cs" Line="26" Column="47" />
-      <File FileName="appsettings.json" />
+      <File FileName="Models/ResponseType.cs" />
+      <File FileName="../TelegramBot/Model/JsonObjects/ApiResponseModel.cs" />
+      <File FileName="../TelegramBot/Model/JsonObjects/CardModel.cs" />
+      <File FileName="appsettings.json" Line="12" Column="69" />
       <File FileName="Models/Card.cs" />
-      <File FileName="Models/Desc.cs" Line="3" Column="15" />
-      <File FileName="Interface/IRepository.cs" Line="14" Column="25" />
+      <File FileName="Models/Desc.cs" />
+      <File FileName="Interface/IRepository.cs" />
       <File FileName="../TelegramBot/Properties/launchSettings.json" />
       <File FileName="Interface/IOpenServices.cs" />
-      <File FileName="Controllers/AuthController.cs" Line="9" Column="17" />
+      <File FileName="Controllers/AuthController.cs" />
       <File FileName="Models/AuthModel/UserDto.cs" />
       <File FileName="Models/AuthModel/User.cs" />
-      <File FileName="Models/Result.cs" Line="11" Column="2" />
-      <File FileName="../NewWebApi.Test/UnitTest1.cs" Line="80" Column="1" />
-      <File FileName="../NewWebApi.Test/GetCardsTests.cs" Line="41" Column="1" />
-      <File FileName="../NewWebApi.Test/AddUserTests.cs" Line="25" Column="4" />
-      <File FileName="../TelegramBot/Model/JsonObjects/Desc.cs" Line="3" Column="15" />
-      <File FileName="Services/Attributes/AuthAtrtribute.cs" Line="24" Column="1" />
+      <File FileName="Models/Result.cs" />
+      <File FileName="../NewWebApi.Test/UnitTest1.cs" />
+      <File FileName="../NewWebApi.Test/GetCardsTests.cs" />
+      <File FileName="../NewWebApi.Test/AddUserTests.cs" />
+      <File FileName="../TelegramBot/Model/JsonObjects/Desc.cs" />
+      <File FileName="Services/Attributes/AuthAtrtribute.cs" />
+      <File FileName="Models/Horoscope.cs" Line="26" Column="44" />
+      <File FileName="Controllers/HoroscopeSenderController.cs" Line="40" Column="1" />
+      <File FileName="Services/GetHoroscopeSubscribersJob.cs" Line="44" Column="4" />
+      <File FileName="Services/TimeZoneConverter.cs" />
+      <File FileName="../NewWebApi.Test/TimeConverterTest.cs" Line="11" Column="61" />
+      <File FileName="../TelegramBot/BotController/HoroscopeSubscribes.cs" Line="112" Column="12" />
+      <File FileName="../TelegramBot/BotController/Registration.cs" Line="44" Column="5" />
+      <File FileName="../TelegramBot/Services/HoroscopeValidator.cs" Line="14" Column="1" />
+      <File FileName="../TelegramBot/Services/HoroscopeSender.cs" Line="1" Column="1" />
+      <File FileName="../TelegramBot/Model/Horoscope.cs" Line="12" Column="2" />
+      <File FileName="../TelegramBot/Model/HoroscopeCacheModel.cs" Line="13" Column="1" />
+      <File FileName="Services/DBConnection.cs" Line="21" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="NewWebApi" expanded="True">
-            <Node name="NewWebApi" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
+            <Node name="NewWebApi">
+              <Node name="Controllers" expanded="True">
+                <Node name="HoroscopeSenderController.cs" selected="True" />
               </Node>
-              <Node name="Controllers" expanded="True" />
-              <Node name="Interface" expanded="True" />
               <Node name="Models" expanded="True" />
-              <Node name="Services" expanded="True">
-                <Node name="Attributes" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="NewWebApi.Test" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="TelegramBot" expanded="True">
-              <Node name="BotController" expanded="True" />
-              <Node name="Model" expanded="True">
-                <Node name="JsonObjects" expanded="True" />
-              </Node>
               <Node name="Services" expanded="True" />
+            </Node>
+            <Node name="TelegramBot">
+              <Node name="BotController" expanded="True" />
+              <Node name="Model" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="Interface" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.NewWebApi.Test FirstBuild="True" />
   <MonoDevelop.Ide.ItemProperties.NewWebApi PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.ItemProperties.TelegramBot PreferredExecutionTarget="/Applications/Safari.app" />
 </Properties>

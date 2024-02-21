@@ -11,12 +11,15 @@ namespace NewWebApi.Services
 		private readonly IMemoryCache memoryCache;
 		private readonly IOpenServices openServices;
         private readonly IReposi reposi;
+        private readonly ILogger<GetHoroscopeSubscribersJob> logger;
 
-        public GetHoroscopeSubscribersJob(IMemoryCache memoryCache, IOpenServices openServices, IReposi reposi) 
+        public GetHoroscopeSubscribersJob(IMemoryCache memoryCache, IOpenServices openServices,
+			IReposi reposi, ILogger<GetHoroscopeSubscribersJob> logger) 
 		{
 			this.memoryCache = memoryCache;
 			this.openServices = openServices;
             this.reposi = reposi;
+            this.logger = logger;
         }
 
 		public async Task Execute(IJobExecutionContext context)
@@ -27,6 +30,7 @@ namespace NewWebApi.Services
 			{
 				var horoscope = new Horoscope(item);
 				var horoscopeResponse = await horoscope.GetHoroscopeAnswer(openServices);
+				logger.LogInformation("Получен гороскопп {1}", horoscopeResponse);
 				if(result.ContainsKey(horoscope.HoroscopeTime.Hour))
 				{
 					result[horoscope.HoroscopeTime.Hour].Add(horoscope.UserName, horoscopeResponse);

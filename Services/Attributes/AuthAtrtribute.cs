@@ -15,11 +15,10 @@ namespace NewWebApi.Services.Attributes
 			var results = new Result();
 			// Получить данные из тела HTTP-запроса
 			var headers = context.HttpContext.Request.Headers;
-			var repository = context.HttpContext.RequestServices.GetService(typeof(IRepository)) as IRepository;
+			var repository = context.HttpContext.RequestServices.GetService(typeof(IReposi)) as IReposi;
 			if(headers.TryGetValue("Id", out var headersValue))
 			{
-				await repository.DeductResponseCount(new User{ Name = headersValue});
-
+				await new User{ Name = headersValue}.DeductResponseCount(repository);
 			}
 		}
 
@@ -28,15 +27,15 @@ namespace NewWebApi.Services.Attributes
 			var results = new Result { IsSuccess = false};
 			// Получить данные из тела HTTP-запроса
 			var headers = context.HttpContext.Request.Headers;
-			var repository = context.HttpContext.RequestServices.GetService(typeof(IRepository)) as IRepository;
+			var repository = context.HttpContext.RequestServices.GetService(typeof(IReposi)) as IReposi;
 			if(headers.TryGetValue("Id", out var headersValue))
 			{
-				results = await repository.CheckResponseCount(new User{ Name = headersValue});
+				results = await new User{ Name = headersValue}.CheckResponseCount(repository);
 
 			}
 			if (!results.IsSuccess)
 			{
-				// Пользователь уже зарегистрирован, выполните необходимые действия
+				// Отказано в доступе
 				context.Result = new BadRequestResult();
 			}
 			

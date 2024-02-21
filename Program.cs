@@ -24,7 +24,7 @@ builder.Services.AddQuartz(q =>
 	.WithIdentity(jobKey.Name + "_trigger")
 	.StartNow()
 	.WithDailyTimeIntervalSchedule(x => x
-	.StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(12,00))
+	.StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(15,16))
 	.WithIntervalInHours(1)
 	.InTimeZone(TimeZoneInfo.Local)
 	));
