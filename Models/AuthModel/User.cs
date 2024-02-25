@@ -10,7 +10,7 @@ namespace NewWebApi.Models.AuthModel
 		public int? Id { get; set; }
 		[Required]
 		public string Name { get; set; }
-		[Required]
+		
 		public string PasswordHash { get; set; }
 
 		public string? Email { get; set; }
@@ -105,11 +105,11 @@ namespace NewWebApi.Models.AuthModel
 				return reposi.Request(comand, TypeOfComand.Insert);
 			}
 		}
-		public async Task<Result> CheckHoroscopeAllowed(IReposi reposi)
+		public static async Task<Result> CheckHoroscopeAllowed(IReposi reposi, string name)
 		{
-			using (var comand = new NpgsqlCommand("SELECT can_get_horoscope FROM users WHERE username = @username;"))
+			using (var comand = new NpgsqlCommand("SELECT can_get_horoscope FROM horoscopes WHERE username = @username;"))
 			{
-				comand.Parameters.AddWithValue("@username", Name);
+				comand.Parameters.AddWithValue("@username", name);
 				var result = await reposi.Request(comand, TypeOfComand.Get);
 				if (result.DataTableResult.Rows.Count > 0)
 				{

@@ -46,14 +46,14 @@ namespace NewWebApi.Controllers
 			return Ok(horoscopeSub);
 		}
 		[HttpPost("CheckHoroscopeAllowance")]
-		public async Task<IActionResult> CheckHoroscopeAllowance(User user)
+		public async Task<IActionResult> CheckHoroscopeAllowance([FromBody]string name)
 		{
-			var result = await user.CheckHoroscopeAllowed(_repository);
-			if(result.IsSuccess)
-			{
-				return Ok(result);
-			}
-			return BadRequest(result);
+			var result = await Models.AuthModel.User.CheckHoroscopeAllowed(_repository, name);
+			
+			return Ok(result);
+			
+			
+			
 		}
 		[HttpPost("UnsubscribeHoroscope")]
 		public async Task<IActionResult> Unsubscribe(User user)
