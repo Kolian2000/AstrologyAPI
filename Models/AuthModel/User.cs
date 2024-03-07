@@ -25,6 +25,7 @@ namespace NewWebApi.Models.AuthModel
 			PasswordHash = BCrypt.Net.BCrypt.HashPassword(userDto.Password);
 		}
 		public User() { }
+
 		public async Task<Result> AddUser(IReposi reposi)
 		{
 			var result = new Result();
@@ -58,7 +59,7 @@ namespace NewWebApi.Models.AuthModel
 			}
 			return result;
 		}
-		public async Task<Result> CheckUserExists(IReposi reposi)
+		public static async Task<Result> CheckUserExists(IReposi reposi, string name)
 		{
 			var result = new Result();
 
@@ -66,7 +67,7 @@ namespace NewWebApi.Models.AuthModel
 			{
 				using (var command = new NpgsqlCommand("SELECT 1 FROM \"users\" WHERE username = @username;"))
 				{
-					command.Parameters.AddWithValue("@username", Name);
+					command.Parameters.AddWithValue("@username", name);
 					result = await reposi.Request(command, TypeOfComand.Check);
 				}
 				if (result.IsSuccess)
@@ -107,7 +108,7 @@ namespace NewWebApi.Models.AuthModel
 		}
 		public static async Task<Result> CheckHoroscopeAllowed(IReposi reposi, string name)
 		{
-			using (var comand = new NpgsqlCommand("SELECT can_get_horoscope FROM horoscopes WHERE username = @username;"))
+			using (var comand = new NpgsqlCommand("SELECT can_get_horoscope FROM users WHERE username = @username;"))
 			{
 				comand.Parameters.AddWithValue("@username", name);
 				var result = await reposi.Request(comand, TypeOfComand.Get);

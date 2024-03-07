@@ -24,12 +24,12 @@ namespace NewWebApi.Controllers
             _reposi = reposi;
         }
 		public IEnumerable<Card> Cards { get; set; }
-		[AuthAttrtribute]
-		[HttpGet]
+		// [AuthAttrtribute]
+		[HttpPost]
 		public async Task<IActionResult> Get(Desc desc)
 		{
 			var cards = await desc.GetCards(_reposi);
-			if(cards.DataTableResult == null)
+			if(!cards.IsSuccess)
 			{
 				return NotFound("No cards found");
 			}

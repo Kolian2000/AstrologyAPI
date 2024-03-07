@@ -22,12 +22,8 @@ builder.Services.AddQuartz(q =>
 	q.AddTrigger(opts => opts
 	.ForJob(jobKey)
 	.WithIdentity(jobKey.Name + "_trigger")
-	.StartNow()
-	.WithDailyTimeIntervalSchedule(x => x
-	.StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(15,16))
-	.WithIntervalInHours(1)
-	.InTimeZone(TimeZoneInfo.Local)
-	));
+	.WithSchedule(CronScheduleBuilder.DailyAtHourAndMinute(13,38))
+	);
 });
 builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
 

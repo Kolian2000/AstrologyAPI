@@ -21,13 +21,19 @@ namespace NewWebApi.Controllers
 		public async Task<ActionResult> Register(UserDto user)
 		{	
 			var users = new User(user);
-			var results =  await users.CheckUserExists(_iReposi);
+			var results =  await Models.AuthModel.User.CheckUserExists(_iReposi, user.Name);
 			if(results.IsSuccess)
 			{
 				results.IsSuccess = false;
 				return Ok(results);
 			}
 			var result = await users.AddUser(_iReposi);
+			return Ok(result);
+		}
+		[HttpGet("CheckUser")]
+		public async Task<ActionResult> CheckUser([FromBody]string name)
+		{
+			var result = await Models.AuthModel.User.CheckUserExists(_iReposi,name);
 			return Ok(result);
 		}
 		

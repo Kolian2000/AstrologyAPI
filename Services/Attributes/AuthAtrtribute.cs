@@ -12,7 +12,7 @@ namespace NewWebApi.Services.Attributes
 		
 		public async void OnResourceExecuted(ResourceExecutedContext context)
 		{ 
-			var results = new Result();
+			
 			// Получить данные из тела HTTP-запроса
 			var headers = context.HttpContext.Request.Headers;
 			var repository = context.HttpContext.RequestServices.GetService(typeof(IReposi)) as IReposi;
@@ -24,8 +24,8 @@ namespace NewWebApi.Services.Attributes
 
 		public async void OnResourceExecuting(ResourceExecutingContext context)
 		{
-			var results = new Result { IsSuccess = false};
-			// Получить данные из тела HTTP-запроса
+			var results = new Result();
+			
 			var headers = context.HttpContext.Request.Headers;
 			var repository = context.HttpContext.RequestServices.GetService(typeof(IReposi)) as IReposi;
 			if(headers.TryGetValue("Id", out var headersValue))

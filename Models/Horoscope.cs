@@ -1,4 +1,5 @@
 using System.Data;
+using System.Text;
 using NewWebApi.Interface;
 using NewWebApi.Models.Enum;
 using Npgsql;
@@ -51,8 +52,21 @@ namespace NewWebApi.Models
 		}
 		public async Task<string> GetHoroscopeAnswer(IOpenServices openServices)
 		{
-			var requestString = openServices.BuildRequestString("ты профессиональный астролог, знаешь принципы планет и домов, умеешь самокритически мыслить", $"Сделай гороскоп на сегодня для {ZodiacSign}");
-			return await openServices.GetResponse(requestString);
+
+			var ss = $@"{{
+					""model"": ""gpt-3.5-turbo"",
+					""messages"": [
+						{{""role"": ""system"", ""content"": ""Ты профессиональный астролог делвешь гороскопы. Не используещь оценочные суждения""}},
+						{{""role"": ""system"", ""content"": ""Сделай гороскоп для {ZodiacSign}""}}
+					],
+					""temperature"": 0.7
+				}}";
+			var request = new HttpRequestMessage
+			{
+				Method = HttpMethod.Post,
+				Content = new StringContent(ss, Encoding.UTF8, "application/json")
+			};
+			return await openServices.GetResponse(request);
 		}
 		public void TimeConverter()
 		{

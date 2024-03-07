@@ -58,20 +58,17 @@ namespace NewWebApi.Services
 						case TypeOfComand.Count:
 							var reads = (Int32)comand.ExecuteScalar();
 							result.IsSuccess = reads > 0;
-                               
 							break;
-
-													
+							
 					}
 				}
-
-				
+	
 	   			return Task.FromResult(result);
 			}
 			catch (Exception ex)
 			{
 				logger.LogError(ex.Message, "Error in request {0}", comand.CommandText);
-				throw;
+				return Task.FromResult(new Result{IsSuccess = false, ErrorMessage = ex.Message});
 			}
 		}
 

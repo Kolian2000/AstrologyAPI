@@ -6,6 +6,6 @@ namespace NewWebApi.Interface
 	{
 		 public Task<string> GetTaroAnswer(DataTable cards);
 		 public string BuildRequestString(params string[] messages);
-		 public Task<string> GetResponse(string requestString);
+		 public Task<string> GetResponse(HttpRequestMessage requestString);
 	}
 }
