@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  newwebapi:
+    image: ${DOCKER_REGISTRY-}newwebapi
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+
+  telegrambot:
+    image: ${DOCKER_REGISTRY-}telegrambot
+    build:
+      context: .
+      dockerfile: ../TelegramBot/Dockerfile
+      
+  postgres:
+    image: postgres : 16
+    environment:
+      POSTGRES_DB: taro
+      POSTGRES_USER: roza
+      POSTGRES_PASSWORD: Kolian1232329
+    ports: 5432:5432   
+
+
