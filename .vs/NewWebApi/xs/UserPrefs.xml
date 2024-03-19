@@ -1,33 +1,25 @@
 ﻿<Properties StartupConfiguration="{87843B3D-7572-4086-BC35-F43E58999B24}|Default">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <Breakpoint enabled="false" file="/Users/apple/NewWebApi/Services/Attributes/AuthAtrtribute.cs" relfile="Services/Attributes/AuthAtrtribute.cs" line="14" column="1" />
-    <Breakpoint enabled="false" file="/Users/apple/TelegramBot/Services/Sender.cs" line="96" column="1" />
-    <Breakpoint enabled="false" file="/Users/apple/TelegramBot/Services/Sender.cs" line="72" column="1" />
-    <Breakpoint enabled="false" file="/Users/apple/NewWebApi/Controllers/AnswerController.cs" relfile="Controllers/AnswerController.cs" line="31" column="1" />
-    <Breakpoint enabled="false" file="/Users/apple/NewWebApi/Services/Attributes/AuthAtrtribute.cs" relfile="Services/Attributes/AuthAtrtribute.cs" line="26" column="1" />
-    <Breakpoint enabled="false" file="/Users/apple/TelegramBot/Model/JsonObjects/Desc.cs" line="34" column="1" />
-    <Breakpoint enabled="false" file="/Users/apple/TelegramBot/Model/JsonObjects/Desc.cs" line="29" column="1" />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.ItemProperties.NewWebApi PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.ItemProperties.TelegramBot PreferredExecutionTarget="/Applications/Safari.app" />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.NewWebApi.Test FirstBuild="True" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../TelegramBot/Program.cs">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.TelegramBot PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="appsettings.json">
     <Files>
-      <File FileName="../TelegramBot/Program.cs" Line="47" Column="1" />
+      <File FileName="../TelegramBot/Program.cs" />
       <File FileName="Program.cs" />
       <File FileName="Controllers/AnswerController.cs" />
       <File FileName="Services/OpenAi.cs" />
-      <File FileName="../TelegramBot/Services/Sender.cs" Line="27" Column="1" />
-      <File FileName="../TelegramBot/Services/Interface/ISender.cs" Line="10" Column="25" />
-      <File FileName="../TelegramBot/BotController/BotSEnder.cs" Line="1" Column="1" />
-      <File FileName="../TelegramBot/BotController/TaroSession.cs" Line="73" Column="1" />
-      <File FileName="../TelegramBot/Model/TelegramCacheModel.cs" Line="9" Column="12" />
+      <File FileName="../TelegramBot/Services/Sender.cs" />
+      <File FileName="../TelegramBot/Services/Interface/ISender.cs" />
+      <File FileName="../TelegramBot/BotController/BotSEnder.cs" />
+      <File FileName="../TelegramBot/BotController/TaroSession.cs" />
+      <File FileName="../TelegramBot/Model/TelegramCacheModel.cs" />
       <File FileName="Models/ResponseType.cs" />
-      <File FileName="../TelegramBot/Model/JsonObjects/ApiResponseModel.cs" Line="26" Column="1" />
-      <File FileName="appsettings.json" />
+      <File FileName="../TelegramBot/Model/JsonObjects/ApiResponseModel.cs" />
+      <File FileName="appsettings.json" Line="20" Column="1" />
       <File FileName="Models/Card.cs" />
       <File FileName="Models/Desc.cs" />
       <File FileName="Interface/IRepository.cs" />
@@ -35,55 +27,41 @@
       <File FileName="Interface/IOpenServices.cs" />
       <File FileName="Controllers/AuthController.cs" />
       <File FileName="Models/AuthModel/UserDto.cs" />
-      <File FileName="Models/AuthModel/User.cs" Line="46" Column="6" />
+      <File FileName="Models/AuthModel/User.cs" />
       <File FileName="Models/Result.cs" />
       <File FileName="../NewWebApi.Test/UnitTest1.cs" />
       <File FileName="../NewWebApi.Test/GetCardsTests.cs" />
       <File FileName="../NewWebApi.Test/AddUserTests.cs" />
-      <File FileName="../TelegramBot/Model/JsonObjects/Desc.cs" Line="32" Column="1" />
+      <File FileName="../TelegramBot/Model/JsonObjects/Desc.cs" />
       <File FileName="Services/Attributes/AuthAtrtribute.cs" />
       <File FileName="Models/Horoscope.cs" />
       <File FileName="Controllers/HoroscopeSenderController.cs" />
       <File FileName="Services/GetHoroscopeSubscribersJob.cs" />
       <File FileName="Services/TimeZoneConverter.cs" />
       <File FileName="../NewWebApi.Test/TimeConverterTest.cs" />
-      <File FileName="../TelegramBot/BotController/HoroscopeSubscribes.cs" Line="31" Column="1" />
-      <File FileName="../TelegramBot/BotController/Registration.cs" Line="21" Column="3" />
+      <File FileName="../TelegramBot/BotController/HoroscopeSubscribes.cs" />
+      <File FileName="../TelegramBot/BotController/Registration.cs" />
       <File FileName="../TelegramBot/Services/HoroscopeValidator.cs" />
-      <File FileName="../TelegramBot/Model/Horoscope.cs" Line="53" Column="1" />
-      <File FileName="../TelegramBot/Model/HoroscopeCacheModel.cs" Line="1" Column="1" />
+      <File FileName="../TelegramBot/Model/Horoscope.cs" />
       <File FileName="Services/DBConnection.cs" />
       <File FileName="Models/RequestModel.cs" />
-      <File FileName="../TelegramBot/Model/User.cs" Line="35" Column="1" />
-      <File FileName="../TelegramBot/Model/JsonObjects/Card.cs" Line="30" Column="45" />
-      <File FileName="../TelegramBot/Model/RequestModel.cs" Line="1" Column="1" />
+      <File FileName="../TelegramBot/Model/User.cs" />
+      <File FileName="../TelegramBot/Model/JsonObjects/Card.cs" />
+      <File FileName="../TelegramBot/Model/RequestModel.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="NewWebApi" expanded="True">
-            <Node name="NewWebApi" expanded="True">
-              <Node name="Models" expanded="True">
-                <Node name="AuthModel" expanded="True" />
-              </Node>
-              <Node name="Services" expanded="True">
-                <Node name="Attributes" expanded="True" />
-              </Node>
+            <Node name="NewWebApi.Test" expanded="True">
+              <Node name="Dependencies" selected="True" />
             </Node>
-            <Node name="TelegramBot">
-              <Node name="BotController" expanded="True" />
-              <Node name="Model" expanded="True">
-                <Node name="JsonObjects" expanded="True" />
-              </Node>
-              <Node name="Services" expanded="True">
-                <Node name="Interface" expanded="True" />
-              </Node>
-              <Node name="Program.cs" selected="True" />
-            </Node>
+            <Node name="TelegramBot" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
 </Properties>

@@ -44,16 +44,28 @@ builder.Services.AddHttpClient<IOpenServices, OpenAi>((HttpClient client) =>
 	client.DefaultRequestHeaders.Add("Authorization", $"Bearer {builder.Configuration["OpenAI:Apikey2"]}");
 });
 var app = builder.Build();
-
-app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+app.UseCors("AllowOrigin");
+// app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
 	app.UseSwagger();
 	app.UseSwaggerUI();
 }
+app.Use(async (HttpContext context, Func<Task> next) =>
+{
+	if(context.Request.Path.StartsWithSegments("/tset"))
+	{
+		await context.Response.WriteAsync("Ok");
+	}
+	else
+	{
+		await next();
+	}
+});
 
-app.UseHttpsRedirection();
+
+// app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAuthorization();
 

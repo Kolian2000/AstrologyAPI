@@ -19,4 +19,5 @@ RUN dotnet publish "NewWebApi.csproj" -c Release -o /app/publish /p:UseAppHost=f
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+COPY wwwroot /app/wwwroot
 ENTRYPOINT ["dotnet", "NewWebApi.dll"]

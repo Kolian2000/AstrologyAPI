@@ -6,19 +6,35 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
+    environment:
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=Kolian1232329
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/1234.pfx
+    volumes:
+      - /Users/apple/https:/https/  
 
   telegrambot:
     image: ${DOCKER_REGISTRY-}telegrambot
     build:
-      context: .
-      dockerfile: ../TelegramBot/Dockerfile
-      
+      context: /Users/apple/TelegramBot
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=Kolian1232329
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/1234.pfx
+    volumes:
+      - /Users/apple/https:/https/
+
   postgres:
-    image: postgres : 16
+    image: postgres:16
     environment:
       POSTGRES_DB: taro
       POSTGRES_USER: roza
       POSTGRES_PASSWORD: Kolian1232329
-    ports: 5432:5432   
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - .:/docker-entrypoint-initdb.d
+      - taro-data:/var/lib/postgresql/data
+    ports: 
+      - 5432:5432   
 
-
+volumes:
+  taro-data:
