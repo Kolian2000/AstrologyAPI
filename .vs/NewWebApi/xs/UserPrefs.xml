@@ -1,14 +1,7 @@
 ﻿<Properties StartupConfiguration="{87843B3D-7572-4086-BC35-F43E58999B24}|Default">
-  <MonoDevelop.Ide.ItemProperties.NewWebApi.Test FirstBuild="True" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.TelegramBot PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="appsettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../TelegramBot/Program.cs">
     <Files>
-      <File FileName="../TelegramBot/Program.cs" />
+      <File FileName="../TelegramBot/Program.cs" Line="1" Column="1" />
       <File FileName="Program.cs" />
       <File FileName="Controllers/AnswerController.cs" />
       <File FileName="Services/OpenAi.cs" />
@@ -19,10 +12,9 @@
       <File FileName="../TelegramBot/Model/TelegramCacheModel.cs" />
       <File FileName="Models/ResponseType.cs" />
       <File FileName="../TelegramBot/Model/JsonObjects/ApiResponseModel.cs" />
-      <File FileName="appsettings.json" Line="20" Column="1" />
+      <File FileName="appsettings.json" />
       <File FileName="Models/Card.cs" />
       <File FileName="Models/Desc.cs" />
-      <File FileName="Interface/IRepository.cs" />
       <File FileName="../TelegramBot/Properties/launchSettings.json" />
       <File FileName="Interface/IOpenServices.cs" />
       <File FileName="Controllers/AuthController.cs" />
@@ -48,20 +40,33 @@
       <File FileName="../TelegramBot/Model/User.cs" />
       <File FileName="../TelegramBot/Model/JsonObjects/Card.cs" />
       <File FileName="../TelegramBot/Model/RequestModel.cs" />
+      <File FileName="obj/Debug/net7.0/NewWebApi.AssemblyInfo.cs" />
+      <File FileName="Dockerfile1" />
+      <File FileName="docker-compose.yml" />
+      <File FileName="nlog.config" />
+      <File FileName="LogServices/Class1.cs" />
+      <File FileName="LogServices/ILoggerManager.cs" />
+      <File FileName="LogServices/LoggerManager.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="NewWebApi" expanded="True">
-            <Node name="NewWebApi.Test" expanded="True">
-              <Node name="Dependencies" selected="True" />
-            </Node>
+            <Node name="NewWebApi" expanded="True" />
             <Node name="TelegramBot" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.TelegramBot PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.LogServices FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.NewWebApi.Test FirstBuild="True" />
   <MultiItemStartupConfigurations />
 </Properties>

@@ -1,23 +1,14 @@
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
+# Используем базовый образ PostgreSQL
+FROM postgres:latest
 
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
-WORKDIR /app
-EXPOSE 80
-EXPOSE 443
+# Определяем переменные окружения для настройки базы данных
+ENV POSTGRES_DB taro
+ENV POSTGRES_USER roza
+ENV POSTGRES_PASSWORD Kolian1232329
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-WORKDIR /src
-COPY ["NewWebApi.csproj", "."]
-RUN dotnet restore "./NewWebApi.csproj"
-COPY . .
-WORKDIR "/src/."
-RUN dotnet build "NewWebApi.csproj" -c Release -o /app/build
+# Копируем скрипты инициализации в директорию контейнера
+COPY your-backup-script.sql /docker-entrypoint-initdb.d/
 
-FROM build AS publish
-RUN dotnet publish "NewWebApi.csproj" -c Release -o /app/publish /p:UseAppHost=false
+# Устанавливаем права доступа для скриптов
 
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
-COPY wwwroot /app/wwwroot
-ENTRYPOINT ["dotnet", "NewWebApi.dll"]
+

@@ -15,8 +15,8 @@ services:
   telegrambot:
     image: ${DOCKER_REGISTRY-}telegrambot
     build:
-      context: /Users/apple/TelegramBot
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./Dockerfile
     environment:
       - ASPNETCORE_Kestrel__Certificates__Default__Password=Kolian1232329
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/1234.pfx

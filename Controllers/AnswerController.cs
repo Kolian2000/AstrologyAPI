@@ -16,15 +16,15 @@ namespace NewWebApi.Controllers
 	public class AnswerController : ControllerBase
 	{
 		private readonly IOpenServices _openAi;
-        private readonly IReposi _reposi;
+		private readonly IReposi _reposi;
 
-        public AnswerController(IOpenServices openai, IReposi reposi)
+		public AnswerController(IOpenServices openai, IReposi reposi)
 		{
 			_openAi = openai;
-            _reposi = reposi;
-        }
+			_reposi = reposi;
+		}
 		public IEnumerable<Card> Cards { get; set; }
-		// [AuthAttrtribute]
+		
 		[HttpPost]
 		public async Task<IActionResult> Get(Desc desc)
 		{
@@ -38,6 +38,7 @@ namespace NewWebApi.Controllers
 			{
 				return NotFound("No answer found");
 			}
+			
 
 			return Ok(new ResponseType(cards.DataTableResult,answerApi));
 			

@@ -1,0 +1,12 @@
+2024-03-26 13:43:24.4359 INFO Adding 1 jobs, 1 triggers.
+2024-03-26 13:43:24.4683 INFO Adding job: DEFAULT.HoroscopeJob
+2024-03-26 13:43:24.4715 DEBUG Scheduling job: DEFAULT.HoroscopeJob with trigger: DEFAULT.HoroscopeJob_trigger
+2024-03-26 13:43:24.4971 DEBUG Rescheduling job: DEFAULT.HoroscopeJob with updated trigger: DEFAULT.HoroscopeJob_trigger
+2024-03-26 13:48:24.5523 INFO Adding 1 jobs, 1 triggers.
+2024-03-26 13:48:24.5864 INFO Adding job: DEFAULT.HoroscopeJob
+2024-03-26 13:48:24.5894 DEBUG Scheduling job: DEFAULT.HoroscopeJob with trigger: DEFAULT.HoroscopeJob_trigger
+2024-03-26 13:48:24.6170 DEBUG Rescheduling job: DEFAULT.HoroscopeJob with updated trigger: DEFAULT.HoroscopeJob_trigger
+2024-03-26 13:52:11.8241 INFO Adding 1 jobs, 1 triggers.
+2024-03-26 13:52:11.8575 INFO Adding job: DEFAULT.HoroscopeJob
+2024-03-26 13:52:11.8603 DEBUG Scheduling job: DEFAULT.HoroscopeJob with trigger: DEFAULT.HoroscopeJob_trigger
+2024-03-26 13:52:11.8890 DEBUG Rescheduling job: DEFAULT.HoroscopeJob with updated trigger: DEFAULT.HoroscopeJob_trigger
