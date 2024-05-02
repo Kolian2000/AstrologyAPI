@@ -1,1 +1,10 @@
 appsettings.json
+docker-compose.dcproj
+your-backup-script.sql
+docker-compose.dcproj 
+docker-compose.override.yml 
+docker-compose.yml 
+Dockerfile 
+Dockerfile1 
+github-metrics.svg
+nlog.config
