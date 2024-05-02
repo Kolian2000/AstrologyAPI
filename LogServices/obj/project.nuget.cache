@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/9qhP5C9Y1gjOUK8hqbg/L1G0Fj3rAbvateFsYeHBFuGvQH4t4qs9qbLolpRMO48qHa9Samqmb2xBl0xEbMA0g==",
+  "dgSpecHash": "mVGlG219T/4lTVgLeNU+w7q59wMZurzYh8gbChmZXh/pa38FTnQjj/PvO6b1mfPLiGB8QbzI8mLjmPgIolummQ==",
   "success": true,
   "projectFilePath": "/Users/apple/NewWebApi/LogServices/LogServices.csproj",
   "expectedPackageFiles": [
@@ -53,7 +53,9 @@
     "/Users/apple/.nuget/packages/system.security.permissions/6.0.0/system.security.permissions.6.0.0.nupkg.sha512",
     "/Users/apple/.nuget/packages/system.text.encodings.web/8.0.0/system.text.encodings.web.8.0.0.nupkg.sha512",
     "/Users/apple/.nuget/packages/system.text.json/8.0.0/system.text.json.8.0.0.nupkg.sha512",
-    "/Users/apple/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512"
+    "/Users/apple/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512",
+    "/Users/apple/.nuget/packages/microsoft.netcore.app.ref/7.0.17/microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
+    "/Users/apple/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.17/microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512"
   ],
   "logs": []
 }
