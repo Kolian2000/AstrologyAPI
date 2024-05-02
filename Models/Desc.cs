@@ -9,6 +9,7 @@ namespace NewWebApi.Models
 		public int? Id { get; set; }
 		public string Name { get; set; }
 		public string? KindDesc { get; set; }
+		public string Question { get; set; }
 		
 		
 		public async Task<Result> GetCards(IReposi reposi)

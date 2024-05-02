@@ -64,9 +64,11 @@
 /Users/apple/NewWebApi/obj/Debug/net7.0/staticwebassets.build.json
 /Users/apple/NewWebApi/obj/Debug/net7.0/staticwebassets.development.json
 /Users/apple/NewWebApi/obj/Debug/net7.0/scopedcss/bundle/NewWebApi.styles.css
-/Users/apple/NewWebApi/obj/Debug/net7.0/NewWebApi.csproj.CopyComplete
 /Users/apple/NewWebApi/obj/Debug/net7.0/NewWebApi.dll
 /Users/apple/NewWebApi/obj/Debug/net7.0/refint/NewWebApi.dll
 /Users/apple/NewWebApi/obj/Debug/net7.0/NewWebApi.pdb
 /Users/apple/NewWebApi/obj/Debug/net7.0/NewWebApi.genruntimeconfig.cache
 /Users/apple/NewWebApi/obj/Debug/net7.0/ref/NewWebApi.dll
+/Users/apple/NewWebApi/bin/Debug/net7.0/FreeKassa.NET.dll
+/Users/apple/NewWebApi/obj/Debug/net7.0/NewWebApi.sourcelink.json
+/Users/apple/NewWebApi/obj/Debug/net7.0/NewWebApi.csproj.Up2Date

@@ -7,17 +7,5 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Reflection;
-
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("d57a1e08-96e4-47a3-9bc0-2abeba2787ff")]
-[assembly: System.Reflection.AssemblyCompanyAttribute("NewWebApi")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8bd346f45118fc2ef75c1be8fc918d85315f2fd")]
-[assembly: System.Reflection.AssemblyProductAttribute("NewWebApi")]
-[assembly: System.Reflection.AssemblyTitleAttribute("NewWebApi")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-
 // Создано классом WriteCodeFragment MSBuild.
 

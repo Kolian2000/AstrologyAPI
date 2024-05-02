@@ -23,7 +23,6 @@ namespace NewWebApi.Controllers
 			_openAi = openai;
 			_reposi = reposi;
 		}
-		public IEnumerable<Card> Cards { get; set; }
 		
 		[HttpPost]
 		public async Task<IActionResult> Get(Desc desc)
@@ -33,7 +32,7 @@ namespace NewWebApi.Controllers
 			{
 				return NotFound("No cards found");
 			}
-			var answerApi = await _openAi.GetTaroAnswer(cards.DataTableResult);
+			var answerApi = await _openAi.GetTaroAnswer(cards.DataTableResult, desc.Question);
 			if(answerApi == null)
 			{
 				return NotFound("No answer found");

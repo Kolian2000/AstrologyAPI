@@ -6,6 +6,7 @@ using Newtonsoft.Json.Serialization;
 using Quartz;
 using NLog;
 using LogServices;
+using FreeKassa.NET;
 
 var builder = WebApplication.CreateBuilder(args);
 LogManager.Setup().LoadConfigurationFromFile(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
@@ -15,6 +16,7 @@ builder.Services.AddCors(options =>
 	options.AddPolicy("AllowOrigin", opt => opt.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 });
 builder.Services.AddControllers();
+builder.Services.AddFreeKassa(1, "test", "test");
 builder.Services.AddQuartz(q =>
 {
 	q.UseMicrosoftDependencyInjectionJobFactory();
@@ -39,6 +41,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<ILoggerManager, LoggerManager>();
 builder.Services.AddScoped<IReposi, DBConnection>();
+builder.Services.AddScoped<IPayment, PaymentServices>();
 builder.Services.AddMemoryCache();
 builder.Services.AddHttpClient<IOpenServices, OpenAi>((HttpClient client) =>
 {

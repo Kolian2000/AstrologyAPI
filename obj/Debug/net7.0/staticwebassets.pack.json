@@ -1,18 +1,6 @@
 {
   "Files": [
     {
-      "Id": "/Users/apple/NewWebApi/wwwroot/.DS_Store",
-      "PackagePath": "staticwebassets/.DS_Store"
-    },
-    {
-      "Id": "/Users/apple/NewWebApi/wwwroot/Images/.DS_Store",
-      "PackagePath": "staticwebassets/Images/.DS_Store"
-    },
-    {
-      "Id": "/Users/apple/NewWebApi/wwwroot/Images/FirstDesc/.DS_Store",
-      "PackagePath": "staticwebassets/Images/FirstDesc/.DS_Store"
-    },
-    {
       "Id": "/Users/apple/NewWebApi/wwwroot/Images/FirstDesc/Coins01.jpg",
       "PackagePath": "staticwebassets/Images/FirstDesc/Coins01.jpg"
     },
@@ -323,10 +311,6 @@
     {
       "Id": "/Users/apple/NewWebApi/wwwroot/Images/FirstDesc/WandsQueen.jpg",
       "PackagePath": "staticwebassets/Images/FirstDesc/WandsQueen.jpg"
-    },
-    {
-      "Id": "/Users/apple/NewWebApi/wwwroot/Images/GothicDesc/.DS_Store",
-      "PackagePath": "staticwebassets/Images/GothicDesc/.DS_Store"
     },
     {
       "Id": "/Users/apple/NewWebApi/wwwroot/Images/GothicDesc/Back.jpg",

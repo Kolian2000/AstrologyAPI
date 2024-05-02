@@ -48,7 +48,7 @@ namespace NewWebApi.Models.AuthModel
 					{
 						IsSuccess = false,
 						ErrorMessage = "User with the provided username already exists."
-						// Другие поля, которые вы хотите добавить к объекту Result
+						
 					};
 				}
 			}

@@ -13,7 +13,7 @@ namespace NewWebApi.Services.Attributes
 		public async void OnResourceExecuted(ResourceExecutedContext context)
 		{ 
 			
-			// Получить данные из тела HTTP-запроса
+			
 			var headers = context.HttpContext.Request.Headers;
 			var repository = context.HttpContext.RequestServices.GetService(typeof(IReposi)) as IReposi;
 			if(headers.TryGetValue("Id", out var headersValue))

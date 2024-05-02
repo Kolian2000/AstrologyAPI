@@ -22,7 +22,7 @@ namespace NewWebApi.Services
 
 		}
 
-		public async Task<string> GetTaroAnswer(DataTable cards)
+		public async Task<string> GetTaroAnswer(DataTable cards, string question)
 		{
 			var getNameOfPictures = cards.AsEnumerable().Select(s => s.Field<string>("card_name")).ToList();
 			var createUnionString = string.Join(", ", getNameOfPictures);
@@ -30,7 +30,8 @@ namespace NewWebApi.Services
 					""model"": ""gpt-3.5-turbo"",
 					""messages"": [
 						{{""role"": ""system"", ""content"": ""Ты профессиональный таролог, делаешь расклад следуя следующим инструкциям. Шаблон для ответа выглядит так : Card1:[анализ о том, как прошлые события повлияли на текущие?], Card2: [толкование того что происходит сейчас], Card3:[твой прогноз о том какой будет финал или развитие событий], ответы долэны быть естетственными и должны следовать форматированию и также делать заключение на основе трех выпавших карт.не использовать фразы типо - Учитывайте, что толкование карт таро может быть субъективным, и важно их рассматривать в контексте ситуации и интуиции.""}},
-						{{""role"": ""system"", ""content"": ""Выпадают {createUnionString}""}}
+						{{""role"": ""system"", ""content"": ""Вопрос {question}""}},
+						{{""role"": ""user"", ""content"": "" Выпадают карты {createUnionString}""}}
 					],
 					""temperature"": 0.7,
 					""max_tokens"": 1000
